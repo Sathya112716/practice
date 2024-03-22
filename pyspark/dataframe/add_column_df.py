@@ -8,7 +8,7 @@ spark = SparkSession.builder.appName("Add Columns Example").getOrCreate()
 data = [("John", 25), ("Alice", 30), ("Bob", 35)]
 df = spark.createDataFrame(data, ["Name", "Age"])
 
-# Display
+# Display the frame
 print("Original DataFrame:")
 df.show()
 
