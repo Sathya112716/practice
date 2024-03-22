@@ -9,7 +9,7 @@ print("Action:First element:"+str(rdd.first()))#Action in default
 rdd1=sc.textFile("jetbrains://pycharm/navigate/reference?project=pyspark&path=pyspark_practice/create a file")
 #added the text file which created in the working directory"
 rdd2=sc.textFile('C:\\Users\\SathyaPriyaR\\Desktop\\create_a_file.txt')
-#create a empty rdd
+#create a empty rdd also possible
 rdd3=sc.emptyRDD()
 rdd3=sc.parallelize([],10)
 print("initial partition  count:"+str(rdd.getNumPartitions()))#transformation (transfering the data)
