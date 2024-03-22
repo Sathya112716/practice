@@ -4,7 +4,7 @@ from pyspark.sql.functions import lit, when
 # Create a new SparkSession
 spark = SparkSession.builder.appName("Add Columns Example").getOrCreate()
 
-# Create a DataFrame
+# Create a Df
 data = [("John", 25), ("Alice", 30), ("Bob", 35)]
 df = spark.createDataFrame(data, ["Name", "Age"])
 
