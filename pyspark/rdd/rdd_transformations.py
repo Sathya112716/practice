@@ -2,7 +2,7 @@ import pyspark
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("RDD Transformation").getOrCreate()
 sc=spark.sparkContext
-#added the text file which is created in the working directory
+#added the text file which is created in the working drctory
 rdd=sc.textFile('C:\\Users\\SathyaPriyaR\\Desktop\\create_a_file.txt')
 rdd2=rdd.flatMap(lambda x:x.split(" "))
 print(rdd2.collect())
