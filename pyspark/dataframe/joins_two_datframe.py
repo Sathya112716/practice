@@ -23,4 +23,4 @@ df1.join(df2,df1.emp_id==df2.dept_id,"outer").show()
 df1.join(df2,df1.emp_id==df2.dept_id,"leftanti").show()
 
 df1.join(df2,df1.emp_id==df2.dept_id,"leftsemi").show()
-spark.stop()
+spark.stop()#join function code
