@@ -1,7 +1,7 @@
 from pyspark import SparkContext, SparkConf
 from pyspark.sql import SparkSession
 
-spark = SparkSession.builder.appName("RDD Creation").getOrCreate()
+spark = SparkSession.builder.appName("Broadcast Variable").getOrCreate()
 sc = spark.sparkContext
 
 empDF = [("Sathya", 24, 1), ("Ravi", 45, 2), ("priya", 17, 3), ("Anu", 18, 4), ("Eniyan", 34, 5), ("Sandhya", 56, 6), ("Bhuvanesh", 25, 7)]
