@@ -1,5 +1,5 @@
 from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName("RDD Creation").getOrCreate()
+spark = SparkSession.builder.appName("RDD to Dataframe").getOrCreate()
 sc=spark.sparkContext
 data=[("Sathya",24),("Ravi",45),("priya",17)]
 
