@@ -1,4 +1,3 @@
-
 from pyspark.sql.functions import col
 from pyspark.sql import SparkSession
 
@@ -12,7 +11,8 @@ print(rdd)
 df1=spark.createDataFrame(rdd,["Name","Age","Id"])
 print("Before Casting:")
 df1.printSchema()
+spark.stop()
 
 df1_casted=df1.withColumn("Age",col("Age").cast("int"))
 print("After casting:")
-df1.printSchema()
+df1_casted.printSchema()
