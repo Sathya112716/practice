@@ -3,7 +3,7 @@ from pyspark.sql.functions import *
 
 spark = SparkSession.builder.appName("String Functions").getOrCreate()
 sc = spark.sparkContext
-data= [("Sathya Priya","Computer Science"),("Ravi Chandran","Business"),("Bhuvaneshwar Karthick","Electronics")]
+data= [("Sathya","Computer Science"),("Ravi","Business"),("Bhuva","Electronics")]
 
 rdd=sc.parallelize(data)
 print(rdd)
@@ -32,11 +32,11 @@ df_repeat= df.withColumn("repeated", expr("repeat(Name,3)"))
 df_repeat.show()
 
 # rpad function
-df_rpad = df.withColumn("right padded", rpad(df["Name"], 2, "0"))
+df_rpad = df.withColumn("right padded", rpad(df["Name"], 7, "0"))
 df_rpad.show()
 
 # lpad function
-df_lpad = df.withColumn("left padded", lpad(df["Name"], 2, "*"))
+df_lpad = df.withColumn("left padded", lpad(df["Name"], 7, "*"))
 df_lpad.show()
 
 #regexp_replace function
@@ -47,6 +47,3 @@ df_replace.show()
 df_length = df.withColumn("Name_Length", length(df["Department"]))
 df_length.show()
 
-#regexp_extract function
-df_extract = df.withColumn("Domain", regexp_extract(df["Name"], "@(.+)$", 1))
-df_extract.show()
