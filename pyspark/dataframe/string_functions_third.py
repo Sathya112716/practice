@@ -9,6 +9,6 @@ df = spark.createDataFrame(rdd,["Name","Department","Id"])
 df.printSchema()
 df.show()
 
-# Using regexp_extract to extract the first word from the "Name" column
+#regexp_extract
 df_extract = df.withColumn("First_Word", regexp_extract(df["Name"],"@%^#" , 1))
 df_extract.show()
