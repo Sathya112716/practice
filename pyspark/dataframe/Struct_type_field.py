@@ -21,4 +21,3 @@ print()
 print("DataFrame Schema:")
 df.printSchema()
 df.show()
-
