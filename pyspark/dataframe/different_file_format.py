@@ -5,18 +5,17 @@ from pyspark.sql.types import *
 spark = SparkSession.builder.appName("Different file formats").getOrCreate()
 sc = spark.sparkContext
 csv_schema = StructType([
-    StructField("col1", StringType(), True),
-    StructField("col2", IntegerType(), True)
+    StructField("Department", StringType(), True),
 ])
 
 parquet_schema = StructType([
-    StructField("col1", StringType(), True),
-    StructField("col2", IntegerType(), True)
+    StructField("first_name", StringType(), True),
+    StructField("last_name", IntegerType(), True)
 ])
 
 json_schema = StructType([
-    StructField("col1", StringType(), True),
-    StructField("col2", IntegerType(), True)
+    StructField("Name", StringType(), True),
+    StructField("Department", IntegerType(), True)
 ])
 
 #csv
