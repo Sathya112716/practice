@@ -23,7 +23,7 @@ json_schema = StructType([
 csv_df = spark.read.csv("C:\\Users\\SathyaPriyaR\\Desktop\\industry.csv", schema=csv_schema)
 csv_df.show()
 #parquet
-parquet_df = spark.read.parquet("C:\\Users\\SathyaPriyaR\\Downloads\\part-r-00000-1a9822ba-b8fb-4d8e-844a-ea30d0801b9e.gz.parquet", schema=parquet_schema)
+parquet_df = spark.read.parquet("C:\\Users\\SathyaPriyaR\\Downloads\\sample1.parquet", schema=parquet_schema)
 
 #json
 json_df = spark.read.json("C:\\Users\\SathyaPriyaR\\Downloads\\file4.json", schema=json_schema)
@@ -32,9 +32,9 @@ print("CSV Schema:")
 csv_df.printSchema()
 
 print("Parquet Schema:")
-parquet_df.printSchema()
+parquet_df.show()
 
 print("JSON Schema:")
-json_df.printSchema()
+json_df.show()
 
 spark.stop()
