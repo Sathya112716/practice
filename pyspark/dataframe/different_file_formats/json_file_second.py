@@ -18,7 +18,7 @@ custom_schema = StructType([
 json_df = spark.read.schema(custom_schema).option("multiline","True").json("C:\\Users\\SathyaPriyaR\\Desktop\\pyspark\\practice\\pyspark\\resources\\sample json for practice.json")
 
 # Show DataFrame
-json_df.show()
+json_df.show(truncate =False)
 json_df.printSchema()
 
 spark.stop()
