@@ -1,39 +1,23 @@
 from pyspark.sql import SparkSession
-from pyspark.sql.functions import *
-from pyspark.sql.types import *
 
 spark = SparkSession.builder.appName("Different file formats").getOrCreate()
-sc = spark.sparkContext
-csv_schema = StructType([
-    StructField("Department", StringType(), True),
-])
 
-parquet_schema = StructType([
-    StructField("first_name", StringType(), True),
-    StructField("last_name", IntegerType(), True)
-])
-
-json_schema = StructType([
-    StructField("Name", StringType(), True),
-    StructField("Department", IntegerType(), True)
-])
-
-#csv
-csv_df = spark.read.csv("C:\\Users\\SathyaPriyaR\\Desktop\\industry.csv", schema=csv_schema)
+# CSV
+csv_df = spark.read.option("header", "true").csv("C:\\Users\\SathyaPriyaR\\Desktop\\industry.csv", inferSchema=True)
 csv_df.show()
-#parquet
-parquet_df = spark.read.parquet("C:\\Users\\SathyaPriyaR\\Downloads\\sample1.parquet", schema=parquet_schema)
-
-#json
-json_df = spark.read.json("C:\\Users\\SathyaPriyaR\\Downloads\\file4.json", schema=json_schema)
-
 print("CSV Schema:")
 csv_df.printSchema()
 
-print("Parquet Schema:")
+# Parquet
+parquet_df = spark.read.parquet("C:\\Users\\SathyaPriyaR\\Downloads\\sample1.parquet")
 parquet_df.show()
+print("Parquet Schema:")
+parquet_df.printSchema()
 
-print("JSON Schema:")
+# JSON
+json_df = spark.read.json("C:\\Users\\SathyaPriyaR\\Downloads\\file4.json")
 json_df.show()
+print("JSON Schema:")
+json_df.printSchema()
 
 spark.stop()
