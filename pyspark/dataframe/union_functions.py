@@ -2,8 +2,8 @@ from pyspark.sql import SparkSession
 
 spark = SparkSession.builder.appName("UnionExample").getOrCreate()
 
-df1 = spark.createDataFrame([(1, "Sathya"), (2, "Priya"), (3, "Ravi")], ["id", "name"])
-df2 = spark.createDataFrame([(3, "Sandhya"), (4, "Eniyan"), (5, "Sathya")], ["id", "name"])
+df1 = spark.createDataFrame([(1, "Sathya"), (3,"Sandhya"), (3, "Sandhya")], ["id", "name"])
+df2 = spark.createDataFrame([(2, "Sandhya"), (4, "Eniyan"), (5, "Sathya")], ["id", "name"])
 
 union_df = df1.union(df2)
 print("Union using union():")
