@@ -3,7 +3,7 @@ dbutils.widgets.help()
 
 dbutils.widgets.combobox(name='firstname',defaultValue='Sathya',choices=['Sathya','Priya','Sandhya'],label='Name' )
 
-
+#drop down table
 dbutils.widgets.dropdown(name='firstnamedropdown',defaultValue='Sathya',choices=['Sathya','Priya','Sandhya'],label='Name dropdown' )
 
 dbutils.widgets.multiselect(name='firstnamems',defaultValue='Sathya',choices=['Sathya','Priya','Sandhya'],label='Name MS' )
