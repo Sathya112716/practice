@@ -9,7 +9,7 @@ spark = SparkSession.builder \
     .appName("SCD Type Implementation") \
     .getOrCreate()
 
-# Define dimension data
+# Define dimension
 data = [
     (1, 'Sathya', '2022-01-01', '2022-02-28'),
     (2, 'Priya', '2022-01-01', '2022-02-28'),
